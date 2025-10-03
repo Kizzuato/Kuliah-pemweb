@@ -9,39 +9,68 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <!-- Menggunakan font awesome untuk mempermudah mencari icon -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>Startup Asal</title>
   </head>
-    <!-- Navbar -->
-    <div class="bg-light sticky fixed-top">
-       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand text-uppercase fw-bold" href="#">Startup Asal</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-          <div class="navbar-nav">
-            <a class="nav-link active" href="#features">Features</a>
-            <a class="nav-link" href="#pricing">Pricing</a>
-            <a class="nav-link" href="#contact">Contact</a>
-          </div>
+
+  <!-- Menggunakan CSS murni karena bootstrap tidak mendukung fitur hover untuk card -->
+  <style>
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .pricing-hover {
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pricing-hover:hover {
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+
+  <body>
+    <div class="bg-light sticky fixed-top container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+      >
+        <div class="container">
+          <a class="navbar-brand text-uppercase fw-bold" href="#"
+            >Startup Asal</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#featureList"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-      </div>
-    </nav>
+        <div
+          class="collapse navbar-collapse justify-content-center ms-3"
+          id="featureList"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-link active" href="#features">Features</li>
+            <li class="nav-link" href="#pricing">Pricing</li>
+            <li class="nav-link" href="#contact">Contact</li>
+          </ul>
+        </div>
+      </nav>
     </div>
 
-    <!-- Hero Section -->
-    <div class="card text-white text-center border-0">
+    <div class="card text-white text-center border-0 h-100">
       <img
         src="https://placehold.co/1920x300"
         class="card-img"
+        style="height: 400px"
         alt="placeholder"
       />
       <div
@@ -57,11 +86,10 @@
     </div>
 
     <div class="container my-5">
-      <!-- Features -->
       <h2 class="text-center mb-5">Our Features</h2>
       <div class="row g-4">
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 shadow-sm">
+          <div class="card card-hover h-100 shadow-sm">
             <img
               src="https://placehold.co/300x300"
               class="card-img-top"
@@ -76,7 +104,7 @@
           </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 shadow-sm">
+          <div class="card card-hover h-100 shadow-sm">
             <img
               src="https://placehold.co/300x300"
               class="card-img-top"
@@ -91,7 +119,7 @@
           </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 shadow-sm">
+          <div class="card card-hover h-100 shadow-sm">
             <img
               src="https://placehold.co/300x300"
               class="card-img-top"
@@ -107,49 +135,48 @@
         </div>
       </div>
 
-      <!-- Pricing -->
       <h2 class="text-center my-5">Pricing Plans</h2>
       <div class="row g-4">
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 text-center shadow-sm">
+          <div class="card h-100 text-center pricing-hover">
             <div class="card-body">
               <h5 class="card-title">Basic Plan</h5>
               <p class="fw-bold">$10/month</p>
-              <ul class="list-unstyled">
-                <li>Feature A</li>
-                <li>Feature B</li>
-                <li>Feature C</li>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Feature A</li>
+                <li class="list-group-item">Feature B</li>
+                <li class="list-group-item">Feature C</li>
               </ul>
               <button type="button" class="btn btn-primary">Choose Plan</button>
             </div>
           </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 text-center shadow-sm">
+          <div class="card h-100 text-center pricing-hover">
             <div class="card-body">
               <h5 class="card-title">Standard Plan</h5>
               <p class="fw-bold">$20/month</p>
-              <ul class="list-unstyled">
-                <li>Feature A</li>
-                <li>Feature B</li>
-                <li>Feature C</li>
-                <li>Feature D</li>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Feature A</li>
+                <li class="list-group-item">Feature B</li>
+                <li class="list-group-item">Feature C</li>
+                <li class="list-group-item">Feature D</li>
               </ul>
               <button type="button" class="btn btn-primary">Choose Plan</button>
             </div>
           </div>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12">
-          <div class="card h-100 text-center shadow-sm">
+          <div class="card h-100 text-center pricing-hover">
             <div class="card-body">
               <h5 class="card-title">Premium Plan</h5>
               <p class="fw-bold">$30/month</p>
-              <ul class="list-unstyled">
-                <li>Feature A</li>
-                <li>Feature B</li>
-                <li>Feature C</li>
-                <li>Feature D</li>
-                <li>Feature E</li>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Feature A</li>
+                <li class="list-group-item">Feature B</li>
+                <li class="list-group-item">Feature C</li>
+                <li class="list-group-item">Feature D</li>
+                <li class="list-group-item">Feature E</li>
               </ul>
               <button type="button" class="btn btn-primary">Choose Plan</button>
             </div>
@@ -157,7 +184,6 @@
         </div>
       </div>
 
-      <!-- Contact -->
       <h2 class="text-center my-5">Contact Us</h2>
       <form class="row g-3">
         <div class="col-12">
@@ -178,6 +204,20 @@
       </form>
     </div>
 
+    <div class="bg-light text-center py-4">
+      <footer>
+        <div class="mb-2">@2025 Kizzu Corp | All rights reserved</div>
+        <div>
+          <i class="fab fa-facebook-f"></i>
+
+          <i class="fab fa-twitter"></i>
+
+          <i class="fab fa-google"></i>
+
+          <i class="fab fa-instagram"></i>
+        </div>
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
